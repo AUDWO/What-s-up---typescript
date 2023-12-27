@@ -3,7 +3,18 @@ import { BiSolidUserCircle } from "react-icons/bi";
 import marginDynamic from "../../customCssFunc/marginCustom";
 import paddingDynamic from "../../customCssFunc/paddingCustom";
 
-export const ProfileWrapper = styled.div`
+interface Directions {
+  t?: string;
+  r?: string;
+  b?: string;
+  l?: string;
+}
+
+type PropsType = {
+  [key: string]: string | Directions;
+};
+
+export const ProfileWrapper = styled.div<PropsType>`
   cursor: pointer;
   position: ${(props) => (props.p ? props.p : "")};
   z-index: ${(props) => (props.zI ? props.zI : "")};
@@ -18,7 +29,7 @@ export const ProfileWrapper = styled.div`
   ${(props) => paddingDynamic(props.pd)};
 `;
 
-export const ProfileImgWrapper = styled.div`
+export const ProfileImgWrapper = styled.div<PropsType>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +59,7 @@ export const BasicProfileImg = styled(BiSolidUserCircle)`
   background-color: white;
 `;
 
-export const ProfileNickname = styled.div`
+export const ProfileNickname = styled.di<PropsType>`
   display: flex;
   align-items: center;
   background-color: ${(props) => (props.bC ? props.bC : "none")};

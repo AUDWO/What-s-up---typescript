@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { BiSolidArrowToBottom } from "react-icons/bi";
 import { BiSolidArrowToTop } from "react-icons/bi";
 
-export const PostImgWrapper = styled.div`
+export const PostImgWrapper = styled.div<{ click: string }>`
   display: flex;
   flex-direction: column;
   position: relative;

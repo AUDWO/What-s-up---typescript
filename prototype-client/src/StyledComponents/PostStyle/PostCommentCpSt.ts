@@ -14,7 +14,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 export const MoreReplyButtonIcon = styled(BiSolidDownArrow)`
   margin-right: 5px;
 `;
-export const MoreReplyButtonWrapper = styled.div`
+export const MoreReplyButtonWrapper = styled.div<{ moreReplyOpen: string }>`
   display: flex;
   ${MoreReplyButtonIcon} {
     transform: ${(props) =>

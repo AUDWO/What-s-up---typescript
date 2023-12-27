@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { GiPunchBlast } from "react-icons/gi";
 
-export const SideBarWapper = styled.div`
+export const SideBarWapper = styled.div<{ position: string }>`
   display: flex;
   flex-direction: column;
   width: 340px;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Option = styled.div`
+export const Option = styled.div<{ height: string }>`
   width: 350px;
   height: ${(props) => props.height};
   margin-bottom: 100px;

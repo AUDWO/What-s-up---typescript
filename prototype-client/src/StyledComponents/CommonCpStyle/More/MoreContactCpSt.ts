@@ -6,6 +6,12 @@ import { AiFillLike } from "react-icons/ai";
 import { BiSmile } from "react-icons/bi";
 import { FaRegGrinSquintTears } from "react-icons/fa";
 
+export const MoreContact = styled.div`
+  display: flex;
+  width: 100%;
+  height: 50px;
+`;
+
 const fontSize = `25px`;
 
 export const SmileIcon = styled(BiSmile)`
@@ -31,13 +37,7 @@ export const GoodFillIcon = styled(AiFillLike)`
   color: #3182f6;
 `;
 
-export const MoreStoryContact = styled.div`
-  display: flex;
-  width: 100%;
-  height: 50px;
-`;
-
-export const StoryContactIconCountNumber = styled.div``;
+export const ContactIconCountNumber = styled.div``;
 
 const backColor = {
   "#3182f6": "like",
@@ -46,7 +46,7 @@ const backColor = {
   "#a64eff": "sad",
 };
 
-export const StoryContactIconWrapper = styled.div`
+export const ContactIconWrapper = styled.div<{ [key: string]: string }>`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -54,33 +54,45 @@ export const StoryContactIconWrapper = styled.div`
   height: 35px;
   border-radius: 7px;
   background-color: ${(props) =>
-    props.nextClick === backColor[props.backC] ? props.backC : "#f8f9fa"};
+    props.nextClick === backColor[props.backC as keyof typeof backColor]
+      ? props.backC
+      : "#f8f9fa"};
   margin-right: 18px;
   cursor: pointer;
   ${SadIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as keyof typeof backColor]
+        ? "white"
+        : props.backC};
   }
   ${SmileIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as keyof typeof backColor]
+        ? "white"
+        : props.backC};
   }
   ${HearIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as keyof typeof backColor]
+        ? "white"
+        : props.backC};
   }
   ${GoodIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as keyof typeof backColor]
+        ? "white"
+        : props.backC};
   }
 
-  ${StoryContactIconCountNumber} {
+  ${ContactIconCountNumber} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : "black"};
+      props.nextClick === backColor[props.backC as keyof typeof backColor]
+        ? "white"
+        : "black"};
   }
   &:hover {
     background-color: ${(props) => props.backC};
-    ${StoryContactIconCountNumber} {
+    ${ContactIconCountNumber} {
       color: white;
     }
     ${SmileIcon} {

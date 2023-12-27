@@ -59,7 +59,7 @@ export const MoreCommentInput = styled.textarea`
   background-color: #e8e8e8;
 `;
 
-export const CommentPostButton = styled.div`
+export const CommentPostButton = styled.div<{ comment: string }>`
   font-size: 15px;
   color: ${(props) => (props.comment ? "black" : "#c7c7c8")};
   cursor: pointer;

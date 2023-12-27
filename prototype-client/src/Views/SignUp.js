@@ -147,7 +147,7 @@ const SignUp = () => {
               height="47px"
               borderR="7px"
               padding="10px"
-              marginB="10"
+              mg={{ b: "10" }}
               backC="white"
             />
             <CheckUserInfoWrapper>
