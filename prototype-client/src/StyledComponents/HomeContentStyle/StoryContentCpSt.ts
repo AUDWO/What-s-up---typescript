@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StoryImg = styled.img`
+export const StoryImg = styled.img<{ backC: string }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
