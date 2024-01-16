@@ -24,7 +24,10 @@ export const DiaryFilterOption = styled.div`
   font-size: 20px;
 `;
 
-export const DiaryFilterOptionTitle = styled.span`
+export const DiaryFilterOptionTitle = styled.span<{
+  type: string;
+  on: string;
+}>`
   font-size: 20px;
   ${(props) =>
     props.type === props.on ? "border-bottom: 1px solid black" : ""};
