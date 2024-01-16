@@ -126,27 +126,6 @@ export const Checkbox = styled.input`
   }
 `;
 
-export const ToggleSwitchComponent = () => {
-  return (
-    <>
-      <Checkbox id="toggleImg" type="checkbox" hidden />
-      <ToggleSwitch htmlFor="toggleImg">
-        <ToggleButton></ToggleButton>
-      </ToggleSwitch>
-    </>
-  );
-};
-export const ToggleSwitchComponent2 = ({ value }) => {
-  return (
-    <>
-      <Checkbox id="togglePublic" type="checkbox" hidden value={value} />
-      <ToggleSwitch htmlFor="togglePublic">
-        <ToggleButton></ToggleButton>
-      </ToggleSwitch>
-    </>
-  );
-};
-
 export const ToggleSwitchWrapper = styled.div``;
 
 export const Ooption = styled.div`
@@ -165,17 +144,6 @@ export const LikeCountAbleButtonTitle = styled.div``;
 export const HitsAbleButtonTitle = styled.div``;
 
 export const CommentsAbleButtonTtile = styled.div``;
-
-export const ToggleSwitchFunctionButton = () => {
-  return (
-    <>
-      <Checkbox id="toggleImg" type="checkbox" hidden />
-      <ToggleSwitch htmlFor="toggleImg">
-        <ToggleButton></ToggleButton>
-      </ToggleSwitch>
-    </>
-  );
-};
 
 export const ToggleAbleSwitch = styled.label`
   width: 64px;
@@ -201,26 +169,6 @@ export const ToggleAbleButton = styled.span`
   background: #bbbbbb;
   transition: all 0.2s ease-in;
 `;
-const AbleCheckbox = styled.input`
-  &:checked + ${ToggleAbleSwitch} {
-    background-color: #f7dd07;
-    ${ToggleAbleButton} {
-      left: calc(100% - 20px);
-      background-color: #f7dd07;
-    }
-  }
-`;
-
-export const ToggleFunctionSwitchComponent = ({ inputId }) => {
-  return (
-    <>
-      <AbleCheckbox id={inputId} type="checkbox" hidden />
-      <ToggleAbleSwitch htmlFor={inputId}>
-        <ToggleAbleButton></ToggleAbleButton>
-      </ToggleAbleSwitch>
-    </>
-  );
-};
 
 export const ToggleAbleButtonWrapper = styled.div`
   display: flex;
