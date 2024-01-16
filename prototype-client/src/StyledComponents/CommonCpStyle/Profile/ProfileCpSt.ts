@@ -1,9 +1,26 @@
 import styled from "styled-components";
-import { FaU, FaUser } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa6";
 import marginDynamic from "../../customCssFunc/marginCustom";
 import paddingDynamic from "../../customCssFunc/paddingCustom";
 
-export const ProfileWrapper = styled.div`
+type Direction = {
+  t?: string;
+  r?: string;
+  b?: string;
+  l?: string;
+};
+
+export const ProfileWrapper = styled.div<{
+  p: string;
+  zI: string;
+  width: string;
+  l: string;
+  t: string;
+  jC: string;
+  fD: string;
+  mg: Direction;
+  pd: Direction;
+}>`
   cursor: pointer;
   position: ${(props) => (props.p ? props.p : "")};
   z-index: ${(props) => (props.zI ? props.zI : "")};
@@ -18,7 +35,12 @@ export const ProfileWrapper = styled.div`
   ${(props) => paddingDynamic(props.pd)};
 `;
 
-export const ProfileImgWrapper = styled.div`
+export const ProfileImgWrapper = styled.div<{
+  mg: Direction;
+  w: string;
+  h: string;
+  b: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +51,13 @@ export const ProfileImgWrapper = styled.div`
   border: ${(props) => (props.b === "on" ? "3px solid #f7dd07" : "")};
 `;
 
-export const ProfileImg = styled.img`
+export const ProfileImg = styled.img<{
+  w: string;
+  h: string;
+  zI: string;
+  mg: { t?: string; l?: string; b?: string; r?: string };
+  bd: string;
+}>`
   width: ${(props) => props.w};
   height: ${(props) => props.h};
   z-index: ${(props) => (props.zI ? props.zI : "")};
@@ -39,7 +67,11 @@ export const ProfileImg = styled.img`
   object-fit: cover;
 `;
 
-export const BasicProfileImg = styled(FaUser)`
+export const BasicProfileImg = styled(FaUser)<{
+  fS: string;
+  zI: string;
+  mg: Direction;
+}>`
   font-size: ${(props) => props.fS};
   z-index: ${(props) => (props.zI ? props.zI : "")};
   ${(props) => marginDynamic(props.mg)};
@@ -50,7 +82,17 @@ export const BasicProfileImg = styled(FaUser)`
   border: 1px solid black;
 `;
 
-export const ProfileNickname = styled.div`
+export const ProfileNickname = styled.div<{
+  bC: string;
+  c: string;
+  bR: string;
+  fS: string;
+  fW: string;
+  h: string;
+  fF: string;
+  mg: Direction;
+  pd: Direction;
+}>`
   display: flex;
   align-items: center;
   background-color: ${(props) => (props.bC ? props.bC : "none")};

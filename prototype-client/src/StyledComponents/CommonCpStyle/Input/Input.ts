@@ -1,19 +1,8 @@
 import styled from "styled-components";
+import marginDynamic from "../../customCssFunc/marginCustom";
+import paddingDynamic from "../../customCssFunc/paddingCustom";
 
-let marginDynamic = (props) => {
-  let marginValue = ``;
-
-  for (const key in props) {
-    if (marginDirection[key]) {
-      marginValue += `
-            ${marginDirection[key]} : ${props[key]}px
-            `;
-    }
-  }
-
-  return marginValue;
-};
-
+/*
 let borderDynamic = (props) => {
   let borderValue = ``;
   for (const key in props) {
@@ -25,46 +14,30 @@ let borderDynamic = (props) => {
   }
 
   return borderValue;
-};
+};*/
 
-let paddingDynamic = (props) => {
-  let paddingValue = ``;
-
-  for (const key in props) {
-    if (paddingDirection[key]) {
-      paddingValue += `
-      ${paddingDirection[key]} : ${props[key]}px
-      `;
-    }
-  }
-
-  return paddingValue;
-};
-
-let paddingDirection = {
-  paddingT: "padding-top",
-  paddingL: "padding-left",
-  paddingB: "padding-bottom",
-  paddingR: "padding-right",
-};
-
-let marginDirection = {
-  marginL: "margin-left",
-  marginR: "margin-right",
-  marginB: "margin-bottom",
-  marginT: "margin-top",
-};
-
+/*
 let borderDirection = {
   borderL: "border-left",
   borderR: "border-right",
   borderT: "border-top",
   borderB: "border-bottom",
-};
+};*/
+
 //  border: ${(props) => props.border.borderPx} solid
 //${(props) => props.border.color};
 
-export const Input = styled.input`
+export const Input = styled.input<{
+  t?: string;
+  b?: string;
+  l?: string;
+  r?: string;
+  fontSize: string;
+  borderR: string;
+  padding: string;
+  backC: string;
+  border: { borderPx: string; color: string };
+}>`
   font-size: ${(props) => props.fontSize};
   height: ${(props) => props.height};
   width: ${(props) => props.width};

@@ -22,7 +22,9 @@ export const CommentEditIcon = styled(AiOutlineEdit)`
   margin-right: 3px;
 `;
 
-export const CommentConfigModal = styled.div`
+export const CommentConfigModal = styled.div<{
+  [key: string]: string;
+}>`
   position: absolute;
   right: ${(props) => props.right};
   left: ${(props) => props.left};

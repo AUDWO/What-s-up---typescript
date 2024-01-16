@@ -46,7 +46,12 @@ const backColor = {
   "#a64eff": "sad",
 };
 
-export const ContactIconWrapper = styled.div`
+type BackColorKeys = keyof typeof backColor;
+
+export const ContactIconWrapper = styled.div<{
+  nextClick: string;
+  backC: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -54,29 +59,41 @@ export const ContactIconWrapper = styled.div`
   height: 35px;
   border-radius: 7px;
   background-color: ${(props) =>
-    props.nextClick === backColor[props.backC] ? props.backC : "#f8f9fa"};
+    props.nextClick === backColor[props.backC as BackColorKeys]
+      ? props.backC
+      : "#f8f9fa"};
   margin-right: 18px;
   cursor: pointer;
   ${SadIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as BackColorKeys]
+        ? "white"
+        : props.backC};
   }
   ${SmileIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as BackColorKeys]
+        ? "white"
+        : props.backC};
   }
   ${HearIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as BackColorKeys]
+        ? "white"
+        : props.backC};
   }
   ${GoodIcon} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : props.backC};
+      props.nextClick === backColor[props.backC as BackColorKeys]
+        ? "white"
+        : props.backC};
   }
 
   ${ContactIconCountNumber} {
     color: ${(props) =>
-      props.nextClick === backColor[props.backC] ? "white" : "black"};
+      props.nextClick === backColor[props.backC as BackColorKeys]
+        ? "white"
+        : "black"};
   }
   &:hover {
     background-color: ${(props) => props.backC};
