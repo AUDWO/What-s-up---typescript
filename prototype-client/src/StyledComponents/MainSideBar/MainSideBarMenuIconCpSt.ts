@@ -7,26 +7,7 @@ import { IoReorderThreeSharp } from "react-icons/io5";
 import { BsPencilSquare } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
 
-let marginDirection = {
-  marginL: "margin-left",
-  marginR: "margin-right",
-  marginB: "margin-bottom",
-  marginT: "margin-top",
-};
-
-let marginDynamic = (props) => {
-  let marginValue = ``;
-
-  for (const key in props) {
-    if (marginDirection[key]) {
-      marginValue += `
-      ${marginDirection[key]} : ${props[key]}px
-      `;
-    }
-  }
-
-  return marginValue;
-};
+import marginDynamic from "../customCssFunc/marginCustom";
 
 let cursorPointer = css`
   cursor: pointer;
@@ -37,7 +18,14 @@ const size = css`
   fontweight: 700;
 `;
 
-export const HomeIcon = styled(BiHomeAlt2)`
+type Direction = {
+  t?: string;
+  b?: string;
+  l?: string;
+  r?: string;
+};
+
+export const HomeIcon = styled(BiHomeAlt2)<Direction>`
   font-weight: 800;
   ${cursorPointer};
   ${size};
@@ -45,38 +33,38 @@ export const HomeIcon = styled(BiHomeAlt2)`
   m
 `;
 
-export const SearchIcon = styled(BsSearch)`
+export const SearchIcon = styled(BsSearch)<Direction>`
   ${cursorPointer};
   ${size};
   ${(props) => marginDynamic(props)};
   position: relative;
 `;
 
-export const DiaryIcon = styled(BsJournalBookmark)`
+export const DiaryIcon = styled(BsJournalBookmark)<Direction>`
   ${cursorPointer};
   ${size};
   ${(props) => marginDynamic(props)};
 `;
 
-export const NewPostIcon = styled(AiOutlineAppstoreAdd)`
+export const NewPostIcon = styled(AiOutlineAppstoreAdd)<Direction>`
   ${cursorPointer};
   ${size};
   ${(props) => marginDynamic(props)};
 `;
 
-export const KeepDiaryIcon = styled(BsPencilSquare)`
+export const KeepDiaryIcon = styled(BsPencilSquare)<Direction>`
   ${cursorPointer};
   ${size};
   ${(props) => marginDynamic(props)};
 `;
 
-export const UserIcon = styled(HiOutlineUserCircle)`
+export const UserIcon = styled(HiOutlineUserCircle)<Direction>`
   ${cursorPointer};
   font-size: 30px;
   ${(props) => marginDynamic(props)};
 `;
 
-export const MoreIcon = styled(IoReorderThreeSharp)`
+export const MoreIcon = styled(IoReorderThreeSharp)<Direction>`
   ${cursorPointer};
   ${size};
   ${(props) => marginDynamic(props)};

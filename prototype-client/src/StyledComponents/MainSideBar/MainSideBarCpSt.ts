@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { GiPunchBlast } from "react-icons/gi";
 
-export const SideBarWapper = styled.div`
+export const SideBarWapper = styled.div<{
+  position: string;
+}>`
   display: flex;
   flex-direction: column;
   width: 340px;
@@ -22,7 +24,9 @@ export const MainIcon = styled(GiPunchBlast)`
   font-size: 55px;
 `;
 
-export const FontColor = styled.span`
+export const FontColor = styled.span<{
+  color: string;
+}>`
   font-size: 40px;
   color: ${(props) => (props.color ? props.color : "black")};
 `;
