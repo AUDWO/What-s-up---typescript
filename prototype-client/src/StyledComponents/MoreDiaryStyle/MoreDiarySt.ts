@@ -64,7 +64,9 @@ export const Section33 = styled.div`
   width: 340px;
 `;
 
-export const SectionContainer2 = styled(SectionContainer)`
+export const SectionContainer2 = styled(SectionContainer)<{
+  flex: string;
+}>`
   align-items: center;
   flex: ${(props) => props.flex};
   padding: 60px 20px 60px 20px;

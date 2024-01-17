@@ -6,7 +6,7 @@ export const CommentsWrapper = styled.div`
   overflow-y: scroll;
 `;
 
-export const CommentModalWrapper = styled.div`
+export const CommentModalWrapper = styled.div<{ click: string }>`
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   background-color: #f8f9fa;
   border-radius: 0px 10px 10px 0px;
@@ -66,7 +66,7 @@ export const CommentInput = styled.input`
   place
 `;
 
-export const CommentPostButton = styled.button`
+export const CommentPostButton = styled.button<{ comment: string }>`
   width: 20%;
   height: 40px;
   border-bottom: 2px solid black;

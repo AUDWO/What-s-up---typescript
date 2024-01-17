@@ -1,25 +1,5 @@
 import styled from "styled-components";
-
-let marginDirection = {
-  marginL: "margin-left",
-  marginR: "margin-right",
-  marginB: "margin-bottom",
-  marginT: "margin-top",
-};
-
-let marginDynamic = (props) => {
-  let marginValue = ``;
-
-  for (const key in props) {
-    if (marginDirection[key]) {
-      marginValue += `
-              ${marginDirection[key]} : ${props[key]}px
-              `;
-    }
-  }
-
-  return marginValue;
-};
+import marginDynamic from "../../customCssFunc/marginCustom";
 
 export const ConfigWrapper = styled.div`
   width: 100%;
@@ -29,7 +9,14 @@ export const ConfigWrapper = styled.div`
   border-top: 0.5px solid gray;
 `;
 
-export const ConfigOptionWrapper = styled.div`
+export const ConfigOptionWrapper = styled.div<{
+  height: string;
+  t?: string;
+  b?: string;
+  l?: string;
+  r?: string;
+  flexD: string;
+}>`
   height: ${(props) => (props.height ? props.height : "")};
   padding:10px;
    0px;
